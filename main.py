@@ -9,7 +9,7 @@ headersStr = {
 urlStr = f"https://open.faceit.com/data/v4/players?nickname={nickname}"
 response = requests.get(url=urlStr, headers=headersStr)
 player_id = response.json()["player_id"]
-# print(json.dumps(response.json(), indent=2))
+print(json.dumps(response.json(), indent=2))
 # print(player_id)
 
 # # Map statistics
