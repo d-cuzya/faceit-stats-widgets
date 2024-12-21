@@ -1,2 +1,4 @@
 __pycache__\
 .git\
+player_info.json
+stats.json
