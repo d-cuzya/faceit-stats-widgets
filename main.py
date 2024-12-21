@@ -8,9 +8,17 @@ headersStr = {
 
 urlStr = f"https://open.faceit.com/data/v4/players?nickname={nickname}"
 response = requests.get(url=urlStr, headers=headersStr)
-game_player_id = response.json()["games"]["cs2"]["game_player_id"]
-print(json.dumps(response.json(), indent=2))
+player_id = response.json()["player_id"]
+# print(json.dumps(response.json(), indent=2))
+# print(player_id)
 
-# urlStr = f"https://open.faceit.com/data/v4/players?nickname={nickname}&game=cs2&game_player_id={game_player_id}"
+# # Map statistics
+# urlStr = f"https://open.faceit.com/data/v4/players/{player_id}/stats/cs2"
 # response = requests.get(url=urlStr, headers=headersStr)
 # print(json.dumps(response.json(), indent=2))
+
+count_for_estimation = 10 
+
+urlStr = f"https://open.faceit.com/data/v4/players/{player_id}/games/cs2/stats?limit={count_for_estimation}"
+response = requests.get(url=urlStr, headers=headersStr)
+print(json.dumps(response.json(), indent=2))
