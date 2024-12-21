@@ -1,6 +1,12 @@
 import requests
 import json
 
+class Info:
+    nickname = None
+    player_id = None
+    percentage_of_wins = None
+    
+
 nickname = "Tvozimov"
 headersStr = {
     'Authorization': 'Bearer e3411b15-6b74-4ae6-8a07-043120045f85',
