@@ -1,0 +1,2 @@
+def startHttpServer():
+    print("Яичко")
