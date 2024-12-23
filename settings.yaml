@@ -2,6 +2,7 @@ settings:
   nickname: d_cuzya
   faceit_api_key: e3411b15-6b74-4ae6-8a07-043120045f85
   count_matches_for_estimation: 10
+  game_mode: "5v5"
   time_to_update: 60
   ip: 127.0.0.1
   port: 1234

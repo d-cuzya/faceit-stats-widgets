@@ -16,10 +16,16 @@ with open('player_info.json', 'w') as file:
     player_id = response.json()["player_id"]
     json.dump(response.json(),file, indent=2)
 
-with open('stats.json', 'w') as file:
-    count_for_estimation = 10 
-    urlStr = f"https://open.faceit.com/data/v4/players/{player_id}/games/cs2/stats?limit={count_for_estimation}"
+with open('stats.json', 'w') as file: 
+    urlStr = f"https://open.faceit.com/data/v4/players/{player_id}/games/cs2/stats?limit={settings['settings']['count_matches_for_estimation']}"
     response = requests.get(url=urlStr, headers=headersStr)
     json.dump(response.json(), file,indent=2)
+
+
+with open('stats.json', 'r') as file:
+    data = json.load(file)
+    for i in data["items"]:
+        if i["stats"]["Game Mode"] == settings["settings"]["game_mode"]:
+            print("Skibidistka")
 
 httpserver.startHttpServer()
